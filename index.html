@@ -492,7 +492,7 @@ const PHASES=[
 ];
 
 const WEEKS=[
-{n:1,t:"AI as Intern; Site as System",ga:"AI as intern",gs:"Site as system",
+{n:1,t:"Site as System; AI as Intern",ga:"AI as intern",gs:"Site as system",
  ai:"Best practices for designers collaborating with AI.",
  sys:"Intro to the class, schedule, and syllabus.",
  ws:["Set up accounts.","Build an artifact to improve one aspect of life at the GSD."],
@@ -610,11 +610,11 @@ const el=(t,a={},p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.
 (function(){
  const g=document.getElementById("glance");
  let h=PHASES.map(p=>`<span class="g-phase" style="grid-column:${p.a+1}/${p.b+2};--pc:${css(p.c)}">${p.name}</span>`).join("");
- h+=`<span class="g-lab" style="grid-row:2">Week</span><span class="g-lab ai" style="grid-row:3">AI</span><span class="g-lab sys" style="grid-row:4">Systems</span><span class="g-lab" style="grid-row:5">Milestone</span>`;
+ h+=`<span class="g-lab" style="grid-row:2">Week</span><span class="g-lab sys" style="grid-row:3">Systems</span><span class="g-lab ai" style="grid-row:4">AI</span><span class="g-lab" style="grid-row:5">Milestone</span>`;
  h+=WEEKS.map(w=>`<a class="g-wk" href="#w${w.n}" style="grid-column:${w.n+1}" aria-label="Week ${w.n}: ${w.t.replace(/"/g,"")}">
   <span class="g-n"><i>${w.n}</i><em>${w.t}</em></span>
-  <span class="g-ai ${w.ga?"":"g-none"}">${w.ga||"–"}</span>
   <span class="g-sys ${w.gs?"":"g-none"}">${w.gs||"–"}</span>
+  <span class="g-ai ${w.ga?"":"g-none"}">${w.ga||"–"}</span>
   <span class="g-ms">${w.ms?`<b>${w.ms}</b>`:""}</span></a>`).join("");
  g.innerHTML=h;
 })();
@@ -629,8 +629,8 @@ list.innerHTML=WEEKS.map(w=>`<article class="wk2" id="w${w.n}">
   <div class="wk-side"><div class="wk-num">${String(w.n).padStart(2,"0")}</div>${w.ms?`<span class="ms">${w.ms}</span>`:""}</div>
   <div class="wk-main"><h3>${w.t}</h3>
    ${w.ai||w.sys?`<div class="wk-topics">
-    ${w.ai?`<div style="--c:var(--urban)"><span class="label">AI</span><p>${w.ai}</p></div>`:""}
     ${w.sys?`<div style="--c:var(--media)"><span class="label">Systems</span><p>${w.sys}</p></div>`:""}
+    ${w.ai?`<div style="--c:var(--urban)"><span class="label">AI</span><p>${w.ai}</p></div>`:""}
    </div>`:""}
    <div class="wk-do">
     ${w.ws?`<div><span class="label">Workshops</span>${ul(w.ws)}</div>`:""}
