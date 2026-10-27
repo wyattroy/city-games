@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="City Games: Playable Systems Design. A course idea for the Harvard GSD by Wyatt Roy.">
+<meta name="description" content="City Games: Playable AI Systems Design. A course idea for the Harvard GSD by Wyatt Roy.">
 <link rel="canonical" href="https://wyattroy.github.io/city-games/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wyattroy.github.io/city-games/">
-<meta property="og:title" content="City Games: Playable Systems Design">
+<meta property="og:title" content="City Games: Playable AI Systems Design">
 <meta property="og:description" content="A course idea for the Harvard GSD. Each student models a real Boston or Cambridge site as a digital game, built by directing a team of AI agents.">
 <meta property="og:image" content="https://wyattroy.github.io/city-games/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="City Games: Playable Systems Design, with an illustration of an isometric city built on a board game">
+<meta property="og:image:alt" content="City Games: Playable AI Systems Design, with an illustration of an isometric city built on a board game">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="City Games: Playable Systems Design">
+<meta name="twitter:title" content="City Games: Playable AI Systems Design">
 <meta name="twitter:description" content="A course idea for the Harvard GSD. Each student models a real Boston or Cambridge site as a digital game, built by directing a team of AI agents.">
 <meta name="twitter:image" content="https://wyattroy.github.io/city-games/og.png">
 <title>City Games</title>
@@ -296,6 +296,23 @@ footer{padding-block:56px 0;font:400 13px/1.6 var(--mono);color:var(--muted);bor
 .wk-read{border-top:1px dashed var(--line);padding-top:14px;display:grid;gap:6px}
 .wk-read li{font-size:14.5px;line-height:1.45;color:var(--muted)}
 @media (max-width:720px){.wk2{grid-template-columns:1fr}.wk2 .wk-side{border-right:0;border-bottom:1px solid var(--line);grid-template-columns:auto 1fr;align-items:center;gap:6px 14px;padding:16px 20px}.wk-topics,.wk-do{grid-template-columns:1fr}}
+
+/* hero layout, all widths */
+.hero .whw{max-width:none}
+.hero-fig{max-width:none;margin:0}
+.hero-art{aspect-ratio:600/750;height:auto}
+@media (max-width:599px){.hero-art{aspect-ratio:5/4}}
+@media (min-width:600px) and (max-width:899px){
+ .hero{grid-template-columns:minmax(0,1fr) minmax(200px,36%);column-gap:28px;
+  grid-template-areas:"meta art" "h1 art" "by art" "whw whw" "score score";grid-template-rows:auto auto 1fr auto auto}
+ .hero-fig{align-self:stretch;min-height:0;display:flex}
+ .hero-art{aspect-ratio:auto;height:100%;min-height:220px}
+}
+@media (min-width:900px){
+ .hero{grid-template-columns:minmax(0,1fr) minmax(320px,42%);column-gap:48px;grid-template-areas:"meta meta" "h1 art" "by art" "whw art" "score score";grid-template-rows:auto auto auto auto auto}
+ .hero-fig{align-self:stretch;display:flex;min-height:0}
+ .hero-art{aspect-ratio:auto;height:100%;min-height:480px}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -312,13 +329,13 @@ footer{padding-block:56px 0;font:400 13px/1.6 var(--mono);color:var(--muted);bor
     <span>Site <b>Boston</b></span>
   </div>
   <h1>City Games</h1>
-  <p class="byline">Playable Systems Design</p>
+  <p class="byline">Playable AI Systems Design</p>
   <div class="whw">
     <div class="whw-row" style="--c:var(--urban)"><b>What</b><p>An elective that teaches systems thinking, game design, and AI-augmented design workflows at the same time. Each student picks a site in Boston or Cambridge and builds a playable model of what surrounds it: the people, money, rules, culture, and climate. Then they start a design studio, with a catch: their studio's employees won't be human.</p></div>
     <div class="whw-row" style="--c:var(--media)"><b>How</b><p>Over the semester, students learn systems design at two levels: academically, as a way to interpret their site, and practically, as a way to lead their studio. AI teams are fallible in ways both similar to and different from human teams, so students have to design ways of working together that are robust and critical. If they do, they'll make work faster and stronger than they could alone.</p></div>
     <div class="whw-row" style="--c:var(--culture)"><b>Why</b><p>Agents can execute ideas; the ideas, and the learning, have to come from the students. On purpose, and a little ironically, every reflection assignment in this class is handwritten on paper. This class explores systems in a concrete way through its content (a site, a game) and in a theoretical way through its process (leading AI teams). By integrating the two, students will gain a far deeper understanding of systems thinking, and a relevant, instantly applicable skillset for their design practice.</p></div>
   </div>
-  <figure class="hero-fig"><svg class="hero-art" viewBox="0 0 600 750" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration: an isometric city built on a board game, with a water tank and valve as a stock and flow, and a feedback loop circling the city"><defs>
+  <figure class="hero-fig"><svg class="hero-art" viewBox="0 0 600 750" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration: an isometric city built on a board game, with a water tank and valve as a stock and flow, and a feedback loop circling the city"><defs>
 <pattern id="ht" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#2D4FE0"></rect><circle cx="2.5" cy="2.5" r="1.3" fill="#16161A"></circle></pattern>
 <pattern id="htk" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="#16161A"></rect><circle cx="2" cy="2" r=".75" fill="#F3EFE6"></circle></pattern>
 <pattern id="htc" width="4.5" height="4.5" patternUnits="userSpaceOnUse"><rect width="4.5" height="4.5" fill="#F3EFE6"></rect><circle cx="2.2" cy="2.2" r="1.05" fill="#16161A"></circle></pattern>
